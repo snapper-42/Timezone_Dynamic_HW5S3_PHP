@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "
+    http://www.w3.org/TR/xhtmll/DTD/xhtmll-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head id="Head1" runat="server">
+
+        <title></title>
+
+        <script language="javascript" type="text/javascript">
+
+            // -------------------------------------------------------------------------------
+            // Name: IsValidData
+            // Abstract: Validate the data
+            // -------------------------------------------------------------------------------
+            function IsValidData()
+            {
+                var blnIsValidData = true;
+                var strErrorMessage = "Please correct the following error(s):\n";
+                var frmTimeZonePicker = document.getElementById("frmTimeZonePicker");
+
+                // cmbTimeZone
+                if ( frmTimeZonePicker.cmbTimeZone.selectedIndex < 1 )
+                {
+                    strErrorMessage += "Time Zone must be selected\n";
+                    blnIsValidData = false;
+                }
+
+                // Bad data?
+                if (blnIsValidData == false)
+                {
+                    // Yes, warn the user 
+                    alert(strErrorMessage);
+                }
+
+                return blnIsValidData;
+
+            }
+
+        </script>
+        
+	</head>
+	
+    <body>
+
+        Name: Brandon Roberts <br />
+        Class: PHP <br />
+        Abstract: Homework 5 - Step 3 - Interactive Dynamic Content <br />
+        <br />
+
+        <br />
+
+        <form name="frmTimeZonePicker" id="frmTimeZonePicker" onsubmit="return IsValidData()" action="Homework5Step3.php" method="get">
+            Time Zone:           
+            <select name="cmbTimeZone" id="cmbTimeZone">
+              <option value="0"> </option>
+              <option value="1"> Pacific Time </option>
+              <option value="2"> Central Time </option>
+              <option value="3"> Eastern Time </option>
+          </select>
+			<input type="submit" name="btnSubmit" id="btnSubmit" value="Submit" />
+        </form>
+        
+    	<br />
+        
+    </body>
+    
+</html>        
